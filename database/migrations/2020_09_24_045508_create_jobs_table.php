@@ -16,7 +16,29 @@ class CreateJobsTable extends Migration
         Schema::create('jobs', function (Blueprint $table) {
             $table->id();
             $table->string('title');
-            $table->longText('details');
+            $table->string('job_type');
+            $table->longText('detail')->nullable();
+            
+            $table->string('company_email')->nullable();
+            $table->string('company_name')->nullable();
+            $table->string('company_url')->nullable();
+            $table->string('company_image')->nullable();
+            $table->string('application_link')->nullable();
+            
+            $table->integer('experience')->nullable();
+            $table->string('qualification')->nullable();
+            
+            $table->string('compensation');
+            $table->string('compensation_type');
+            $table->string('compensation_currency');
+            
+            $table->string('location');
+            $table->boolean('remote')->default(false);
+            $table->boolean('relocation_support')->default(false);
+            
+            $table->integer('job_category_id')->unsigned();
+            
+            $table->date('dead_line');
             $table->timestamps();
         });
     }
