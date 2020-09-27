@@ -10,6 +10,11 @@ class JobController extends Controller
 {
     public function index()
     {
-        return Job::all();
+        return Job::with('category', 'tags')->get();
+    }
+
+    public function getJob($id)
+    {
+        return Job::with('category', 'tags')->where('id', $id)->get();
     }
 }

@@ -11,8 +11,9 @@
 |
 */
 
-Route::group(['prefix' => '/'], function () {
+Route::group(['prefix' => 'job'], function () {
     Route::get('/', 'JobController@index');
+    Route::get('{id}', 'JobController@getJob');
     // Route::get('/{id}', 'UserController@getUser')->middleware('authenticated');
     // Route::get('{id}/kyc', 'KycController@userKyc');
     // Route::get('wallet', 'UserController@userWallet');

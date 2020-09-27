@@ -13,7 +13,7 @@ class CreateJobCategoriesTable extends Migration
      */
     public function up()
     {
-        Schema::create('job_category', function (Blueprint $table) {
+        Schema::create('job_categories', function (Blueprint $table) {
             $table->id();
             
             $table->string('title');
@@ -31,6 +31,6 @@ class CreateJobCategoriesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('job_category');
+        Schema::dropIfExists('job_categories');
     }
 }

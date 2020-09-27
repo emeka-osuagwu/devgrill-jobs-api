@@ -24,7 +24,7 @@ class JobFactory extends Factory
     public function definition()
     {
         return [
-            'title' => 'Senior Laravel Developer',
+            'title' => 'Senior Laravel Developer ' . $this->faker->name,
             'detail' => $this->faker->realText($maxNbChars = 2000, $indexSize = 2),
             'job_type' => rand(0, 1) ? 'Freelance' : 'Full Time',
             
@@ -34,8 +34,8 @@ class JobFactory extends Factory
             'company_email' => $this->faker->unique()->safeEmail,
             'company_name' => $this->faker->company,
             'company_url' => $this->faker->url,
-            'company_image' => $this->faker->imageUrl($width = 640, $height = 480),
-            'application_link' => $this->faker->url,
+            'company_image' => "https://res.cloudinary.com/arm/image/upload/v1601093733/3_xglhd7.jpg",
+            'application_link' => "https://devgrill.com/",
             
             'compensation' => $this->faker->name,
             'compensation_type' => $this->faker->name,
@@ -45,12 +45,8 @@ class JobFactory extends Factory
             'remote' => rand(0, 1) ? true : false,
             'relocation_support' => rand(0, 1) ? true : false,
             
-            'job_category_id' => rand(0, 1) ? true : false,
+            'job_category_id' => $this->faker->randomDigitNot(0),
             'dead_line' => Carbon::now(),
-            // 'email' => $this->faker->unique()->safeEmail,
-            // 'email_verified_at' => now(),
-            // 'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
-            // 'remember_token' => Str::random(10),
         ];
     }
 }
