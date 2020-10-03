@@ -17,7 +17,7 @@ class JobsTableSeeder extends Seeder
     {
         // \App\Models\Job::factory(3)->create();
 
-        \App\Models\Job::factory(100)->create()->each(function ($job) {
+        \App\Models\Job::factory(0)->create()->each(function ($job) {
             $job->attachTags(['PHP', 'Nodejs', 'Javascript', 'Vuejs']);
             return $job->save();
         });

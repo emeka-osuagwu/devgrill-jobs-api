@@ -17,6 +17,7 @@ class CreateJobsTable extends Migration
             $table->id();
             $table->string('title');
             $table->string('job_type');
+            $table->string('gender');
             $table->longText('detail')->nullable();
             
             $table->string('company_email')->nullable();
@@ -25,7 +26,7 @@ class CreateJobsTable extends Migration
             $table->string('company_image')->nullable();
             $table->string('application_link')->nullable();
             
-            $table->integer('experience')->nullable();
+            $table->string('experience')->nullable();
             $table->string('qualification')->nullable();
             
             $table->string('compensation');
